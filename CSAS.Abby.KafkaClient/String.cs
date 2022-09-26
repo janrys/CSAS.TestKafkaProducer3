@@ -13,42 +13,26 @@ namespace cz.csas.avroschemas.administeredpayment_processpayment.v03_01
 	using global::Avro;
 	using global::Avro.Specific;
 	
+	/// <summary>
+	/// SEPA datovy typ pro identifikaci zprav/transakci/a jine potreby
+	/// </summary>
 	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("avrogen", "1.11.1")]
-	public partial class Citizenship : global::Avro.Specific.ISpecificRecord
+	public partial class String : global::Avro.Specific.ISpecificRecord
 	{
-		public static global::Avro.Schema _SCHEMA = global::Avro.Schema.Parse("{\"type\":\"record\",\"name\":\"Citizenship\",\"namespace\":\"cz.csas.avroschemas.administer" +
-				"edpayment_processpayment.v03_01\",\"fields\":[{\"name\":\"citizenship\",\"doc\":\"statni p" +
-				"rislusnost / obcanstvi\",\"type\":\"string\"}]}");
-		/// <summary>
-		/// statni prislusnost / obcanstvi
-		/// </summary>
-		private string _citizenship;
+		public static global::Avro.Schema _SCHEMA = global::Avro.Schema.Parse("{\"type\":\"record\",\"name\":\"String\",\"doc\":\"SEPA datovy typ pro identifikaci zprav/tr" +
+				"ansakci/a jine potreby\",\"namespace\":\"cz.csas.avroschemas.administeredpayment_pro" +
+				"cesspayment.v03_01\",\"fields\":[]}");
 		public virtual global::Avro.Schema Schema
 		{
 			get
 			{
-				return Citizenship._SCHEMA;
-			}
-		}
-		/// <summary>
-		/// statni prislusnost / obcanstvi
-		/// </summary>
-		public string citizenship
-		{
-			get
-			{
-				return this._citizenship;
-			}
-			set
-			{
-				this._citizenship = value;
+				return String._SCHEMA;
 			}
 		}
 		public virtual object Get(int fieldPos)
 		{
 			switch (fieldPos)
 			{
-			case 0: return this.citizenship;
 			default: throw new global::Avro.AvroRuntimeException("Bad index " + fieldPos + " in Get()");
 			};
 		}
@@ -56,7 +40,6 @@ namespace cz.csas.avroschemas.administeredpayment_processpayment.v03_01
 		{
 			switch (fieldPos)
 			{
-			case 0: this.citizenship = (System.String)fieldValue; break;
 			default: throw new global::Avro.AvroRuntimeException("Bad index " + fieldPos + " in Put()");
 			};
 		}

@@ -182,7 +182,7 @@ namespace CSAS.Abby.KafkaClient.Console
                             cardType = $"cardType-{messageGenerated}",
                             issuer = $"issuer-{messageGenerated}",
                             issuerCountry = $"issuerCountry-{messageGenerated}",
-                            validUntil = 20220526
+                            validUntil = DateTime.UtcNow,
                         },
                         person = new Person()
                         {
@@ -200,7 +200,7 @@ namespace CSAS.Abby.KafkaClient.Console
                             taxResidency = $"taxResidency-{messageGenerated}",
                         }
                     },
-                    requestDate = DateTime.UtcNow.Ticks,
+                    requestDate = DateTime.UtcNow,
                     requestId = $"requestId-{messageGenerated}",
                     token = $"token-{messageGenerated}",
                     userName = $"userName-{messageGenerated}",
