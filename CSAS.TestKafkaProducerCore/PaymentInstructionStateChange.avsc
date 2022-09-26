@@ -1,0 +1,81 @@
+﻿{
+  "type": "record",
+  "name": "ConnectDefault",
+  "namespace": "io.confluent.connect.avro",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "long"
+    },
+    {
+      "name": "TARGET",
+      "type": "string"
+    },
+    {
+      "name": "SOURCE",
+      "type": "string"
+    },
+    {
+      "name": "ACCOUNT_CURRENCY",
+      "type": "string"
+    },
+    {
+      "name": "ACCOUNT_PREFIX",
+      "type": "string"
+    },
+    {
+      "name": "ACCOUNT_NUMBER",
+      "type": "string"
+    },
+    {
+      "name": "ACCOUNT_DISPOSABLEBALANCE",
+      "type": [
+        "null",
+        "double"
+      ],
+      "default": null
+    },
+    {
+      "name": "DISPOSABLEBALANCE_TIMESTAMP",
+      "type": [
+        "null",
+        {
+          "type": "long",
+          "connect.version": 1,
+          "connect.name": "org.apache.kafka.connect.data.Timestamp",
+          "logicalType": "timestamp-millis"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "RESULT",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "string"
+    },
+    {
+      "name": "MESSAGE",
+      "type": "string"
+    },
+    {
+      "name": "BUSINESSDAY",
+      "type": "string"
+    },
+    {
+      "name": "PAYMENT_EXTERNALID",
+      "type": "string"
+    },
+    {
+      "name": "TARGET_TIMESTAMP",
+      "type": {
+        "type": "long",
+        "connect.version": 1,
+        "connect.name": "org.apache.kafka.connect.data.Timestamp",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}
