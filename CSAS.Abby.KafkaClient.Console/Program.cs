@@ -105,6 +105,18 @@ namespace CSAS.Abby.KafkaClient.Console
                 }
             }
 
+            useSsl = true;
+            if (useSsl)
+            {
+                bootstrapServers = "tpkafast21.vs.csin.cz:9095";
+                schemaRegistryUrl = "http://int-mw-kafka.vs.csin.cz:9081";
+                certCaPath = @"d:\Temp\Kafka\Certs\Omnicom\cair3.pem";
+                clientCertPath = @"d:\Temp\Kafka\Certs\Abby\ABBYY_KAFKA_TEST_PUBLIC.pem";
+                clientKeyPath = @"d:\Temp\Kafka\Certs\Abby\ABBYY_KAFKA_TEST_PRIVATE.pem";
+                clientKeyPassword = "To40wb#e6";
+            }
+
+
             if (!string.IsNullOrEmpty(nativeLibraryPath))
             {
                 AbbyProducer.LoadKafkaNativeLibraries(nativeLibraryPath);

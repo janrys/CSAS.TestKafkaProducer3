@@ -18,11 +18,10 @@ namespace cz.csas.avroschemas.administeredpayment_processpayment.v03_01
 	{
 		public static global::Avro.Schema _SCHEMA = global::Avro.Schema.Parse("{\"type\":\"record\",\"name\":\"AdministeredPayment_processPayment\",\"namespace\":\"cz.csas" +
 				".avroschemas.administeredpayment_processpayment.v03_01\",\"fields\":[{\"name\":\"chann" +
-				"el\",\"type\":\"string\"},{\"name\":\"externalLiabilityIds\",\"default\":null,\"type\":[\"null" +
-				"\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ExternalLiability\",\"namespace" +
-				"\":\"cz.csas.avroschemas.administeredpayment_processpayment.v03_01\",\"fields\":[{\"na" +
-				"me\":\"externalLiabilityId\",\"doc\":\"Externi id zavazku\",\"type\":\"string\"}]}}]},{\"nam" +
-				"e\":\"isin\",\"default\":null,\"type\":[\"null\",\"string\"]},{\"name\":\"orgUnitId\",\"doc\":\"id" +
+				"el\",\"type\":\"string\"},{\"name\":\"externalLiabilityIds\",\"type\":{\"type\":\"array\",\"item" +
+				"s\":{\"type\":\"record\",\"name\":\"ExternalLiability\",\"namespace\":\"cz.csas.avroschemas." +
+				"administeredpayment_processpayment.v03_01\",\"fields\":[{\"name\":\"externalLiabilityI" +
+				"d\",\"doc\":\"Externi id zavazku\",\"type\":\"string\"}]}}},{\"name\":\"orgUnitId\",\"doc\":\"id" +
 				"entifikator pobocky (organizacni jednotky), napr. \\\"001222_001_PRAHA 1,PC_PRAHA " +
 				"1 (RYTIRSKA)\\\", \\\"CE7530_01_TYM VYVOJ A PODPORA INTERNICH APLIKACI\\\", ...\",\"defa" +
 				"ult\":null,\"type\":[\"null\",\"string\"]},{\"name\":\"paymentInstruction\",\"type\":{\"type\":" +
@@ -90,7 +89,6 @@ namespace cz.csas.avroschemas.administeredpayment_processpayment.v03_01
 				"userName\",\"default\":null,\"type\":[\"null\",\"string\"]}]}");
 		private string _channel;
 		private IList<cz.csas.avroschemas.administeredpayment_processpayment.v03_01.ExternalLiability> _externalLiabilityIds;
-		private string _isin;
 		/// <summary>
 		/// identifikator pobocky (organizacni jednotky), napr. "001222_001_PRAHA 1,PC_PRAHA 1 (RYTIRSKA)", "CE7530_01_TYM VYVOJ A PODPORA INTERNICH APLIKACI", ...
 		/// </summary>
@@ -128,17 +126,6 @@ namespace cz.csas.avroschemas.administeredpayment_processpayment.v03_01
 			set
 			{
 				this._externalLiabilityIds = value;
-			}
-		}
-		public string isin
-		{
-			get
-			{
-				return this._isin;
-			}
-			set
-			{
-				this._isin = value;
 			}
 		}
 		/// <summary>
@@ -227,14 +214,13 @@ namespace cz.csas.avroschemas.administeredpayment_processpayment.v03_01
 			{
 			case 0: return this.channel;
 			case 1: return this.externalLiabilityIds;
-			case 2: return this.isin;
-			case 3: return this.orgUnitId;
-			case 4: return this.paymentInstruction;
-			case 5: return this.paymentReceiver;
-			case 6: return this.requestDate;
-			case 7: return this.requestId;
-			case 8: return this.token;
-			case 9: return this.userName;
+			case 2: return this.orgUnitId;
+			case 3: return this.paymentInstruction;
+			case 4: return this.paymentReceiver;
+			case 5: return this.requestDate;
+			case 6: return this.requestId;
+			case 7: return this.token;
+			case 8: return this.userName;
 			default: throw new global::Avro.AvroRuntimeException("Bad index " + fieldPos + " in Get()");
 			};
 		}
@@ -244,14 +230,13 @@ namespace cz.csas.avroschemas.administeredpayment_processpayment.v03_01
 			{
 			case 0: this.channel = (System.String)fieldValue; break;
 			case 1: this.externalLiabilityIds = (IList<cz.csas.avroschemas.administeredpayment_processpayment.v03_01.ExternalLiability>)fieldValue; break;
-			case 2: this.isin = (System.String)fieldValue; break;
-			case 3: this.orgUnitId = (System.String)fieldValue; break;
-			case 4: this.paymentInstruction = (cz.csas.avroschemas.administeredpayment_processpayment.v03_01.PaymentInstruction)fieldValue; break;
-			case 5: this.paymentReceiver = (cz.csas.avroschemas.administeredpayment_processpayment.v03_01.PaymentReceiver)fieldValue; break;
-			case 6: this.requestDate = (System.DateTime)fieldValue; break;
-			case 7: this.requestId = (System.String)fieldValue; break;
-			case 8: this.token = (System.String)fieldValue; break;
-			case 9: this.userName = (System.String)fieldValue; break;
+			case 2: this.orgUnitId = (System.String)fieldValue; break;
+			case 3: this.paymentInstruction = (cz.csas.avroschemas.administeredpayment_processpayment.v03_01.PaymentInstruction)fieldValue; break;
+			case 4: this.paymentReceiver = (cz.csas.avroschemas.administeredpayment_processpayment.v03_01.PaymentReceiver)fieldValue; break;
+			case 5: this.requestDate = (System.DateTime)fieldValue; break;
+			case 6: this.requestId = (System.String)fieldValue; break;
+			case 7: this.token = (System.String)fieldValue; break;
+			case 8: this.userName = (System.String)fieldValue; break;
 			default: throw new global::Avro.AvroRuntimeException("Bad index " + fieldPos + " in Put()");
 			};
 		}
